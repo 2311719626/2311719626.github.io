@@ -8,7 +8,6 @@
 
 **可莉**背不下来啦…
 
-  <img src="C:\Users\Administrator\Downloads\100131535-クレーちゃん\100131535-0.jpg" alt="100131535-0" style="zoom: 10%;" />
 
 # 更新日志
 
