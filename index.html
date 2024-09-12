@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2024/09/12/hello-world/">
-        <h2 class="post-title">Hello World</h2>
+    <a href="/2024/09/12/Git-debug/">
+        <h2 class="post-title">Git debug</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,19 +198,22 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+            <h1 id="Git-debug"><a href="#Git-debug" class="headerlink" title="Git debug"></a>Git debug</h1><h2 id="Git-443-失败"><a href="#Git-443-失败" class="headerlink" title="Git 443 失败"></a>Git 443 失败</h2><p><strong>报错</strong>：git config –global http.proxy, git config –global https.proxy</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2405656">参考链接1</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42206314/article/details/141951016">参考链接2</a></p>
+</blockquote>
+<hr>
+<p><strong>使用<code>VPN</code>时</strong></p>
+<p>解决方法——调整<code>Git</code>代理设置</p>
+<pre><code class="bash">git config --global http.proxy &lt;IP&gt;
+git config --global https.proxy &lt;IP&gt;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+<p><strong>未使用<code>VPN</code>时</strong></p>
+<p>解决方法——取消<code>Git</code>代理设置</p>
+<pre><code class="bash">git config --global --unset http.proxy
+git config --global --unset https.proxy
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
             
         </div>
@@ -220,7 +223,179 @@
         
         
     </div>
-    <a href="/2024/09/12/hello-world/" class="go-post">阅读全文</a>
+    <a href="/2024/09/12/Git-debug/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/09/12/Hexo-%E6%96%B0%E6%89%8B%E6%9D%91%E6%8C%87%E5%8D%97/">
+        <h2 class="post-title">Hexo 新手村指南</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/9/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="Hexo-新手村指南"><a href="#Hexo-新手村指南" class="headerlink" title="Hexo 新手村指南"></a><code>Hexo</code> 新手村指南</h1><p>本文主要讲解利用 <code>GitHub Page</code> 服务的 <code>Hexo</code> 博客搭建指南。</p>
+<h2 id="在开始之前"><a href="#在开始之前" class="headerlink" title="在开始之前"></a>在开始之前</h2><h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><code>GitHub</code></h3><p>首先，由于我们需要使用到 <code>GitHub Page</code> 服务，所以，在此之前，我们需要有一个 <code>GitHub</code> 账号。</p>
+<blockquote>
+<p><strong><code>GitHub Page</code> 相关</strong></p>
+<ol>
+<li><p><strong>是什么?</strong> </p>
+<p><code>GitHub Pages</code> 是一个由 <code>GitHub</code> 提供的静态网站托管服务，它允许用户利用 <code>GitHub</code> 仓库来托管和发布个人、项目或组织的网站。</p>
+</li>
+<li><p><strong>为什么选择？</strong></p>
+<ul>
+<li>使用简单</li>
+<li>自定义域名</li>
+<li>支持多种静态网站生成工具</li>
+<li>自动构建</li>
+</ul>
+</li>
+<li><p><strong>如何运转？</strong></p>
+</li>
+</ol>
+<ul>
+<li>用户将 <code>HTML</code>、<code>CSS</code>和<code>JavaScript</code>文件储存在 <strong>特定的仓库</strong>[^1]中。</li>
+<li>仓库自动构建网站并发布。</li>
+</ul>
+</blockquote>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a><code>Git</code></h3><p>需要 <code>Git</code> 以实现 <strong>本地仓库</strong> 于 <strong>远程仓库</strong> 的链接。</p>
+<blockquote>
+<p><strong>需要注意的是——</strong></p>
+<p><code>Git</code> 通常有两种连接方式，此处推荐第一种，因为其更适用于频繁的连接操作。</p>
+<ol>
+<li><code>SSH</code> 连接[^2]</li>
+<li><code>HTTPS</code> 连接</li>
+</ol>
+</blockquote>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><code>Node.js</code></h3><p>用于 <code>Hexo</code> 环境的搭建。</p>
+<p><strong>安装方式</strong>[^3]</p>
+<h2 id="小试牛刀"><a href="#小试牛刀" class="headerlink" title="小试牛刀"></a>小试牛刀</h2><blockquote>
+<p>目标：安装<code>Hexo</code>，并实现<strong>本地</strong>调试。</p>
+</blockquote>
+<p>建议参考的文档—— <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">Hexo Docs - Set Up</a></p>
+<ol>
+<li>安装<code>Hexo</code></li>
+</ol>
+<pre><code class="bash">npm install -g hexo-cli
+</code></pre>
+<ol start="2">
+<li>新建项目的<code>npm</code>环境</li>
+</ol>
+<pre><code class="bash">hexo init &lt;folder&gt;
+cd &lt;folder&gt;
+npm install
+</code></pre>
+<ol start="3">
+<li>启动服务器</li>
+</ol>
+<pre><code class="bash">hexo server
+</code></pre>
+<hr>
+<p>如果一切正常，终端会产生这样的输出——</p>
+<pre><code class="bash">INFO  Validating config
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+</code></pre>
+<p>恭喜你！！进度条过半，可以准备开香槟了。</p>
+<p>这提示你通过<code>http://localhost:4000/</code>访问你的本地网页，并且你可以通过按键盘上的<code>Ctrl+C</code>停止本地服务。</p>
+<h2 id="再迈一个台阶"><a href="#再迈一个台阶" class="headerlink" title="再迈一个台阶"></a>再迈一个台阶</h2><blockquote>
+<p>目标：实现<code>GitPage</code>配置与搭建</p>
+</blockquote>
+<ol>
+<li>安装部署插件<code>hexo-deployer-git</code></li>
+</ol>
+<pre><code class="bash">npm install hexo-deployer-git --save
+</code></pre>
+<ol start="2">
+<li>更改<code>_config.yml</code> 文件中配置部署部分</li>
+</ol>
+<pre><code>deploy:
+  type: git
+  repo: &lt;repository url&gt;
+  branch: [branch]
+</code></pre>
+<p>注意：</p>
+<ul>
+<li><code>repo</code> : 填写仓库的 <code>SSH</code> 链接。</li>
+<li><code>branch</code> : 一般选择 <code>main</code> 分支。</li>
+</ul>
+<ol start="3">
+<li>开始部署</li>
+</ol>
+<pre><code class="bash">hexo deploy
+</code></pre>
+<hr>
+<p>你可以在 <code>GitHub</code> 上看到网站的部署进度。</p>
+<p>恭喜你，现在，你可以访问属于你的<code>GitHub Page</code>了！！</p>
+<h2 id="装饰你的新手村"><a href="#装饰你的新手村" class="headerlink" title="装饰你的新手村"></a>装饰你的新手村</h2><p>一个比较推荐的主题<code>particlex</code>——</p>
+<p>Link - <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">GitHub</a></p>
+<h2 id="建立你的世界"><a href="#建立你的世界" class="headerlink" title="建立你的世界"></a>建立你的世界</h2><p>[^1]: <strong>特定的仓库</strong> - 对于个人用户而言，利用 <code>GitHub Page</code> 服务时，通常需要设置一个名为  <code>username.github.io</code> 的仓库。<br>[^2]: <strong><code>SSH</code> 连接</strong> - 可以查看 <u><em>GitHub 密钥配置</em></u> 一文。<br>[^3]: <strong>安装方式</strong> - 如何安装请参考 <a target="_blank" rel="noopener" href="https://liaoxuefeng.com/books/javascript/nodejs/index.html">廖雪峰的博客 - Node.js</a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2024/09/12/Hexo-%E6%96%B0%E6%89%8B%E6%9D%91%E6%8C%87%E5%8D%97/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/09/12/GitHub-%E5%AF%86%E9%92%A5%E9%85%8D%E7%BD%AE/">
+        <h2 class="post-title">GitHub 密钥配置</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/9/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="Git-debug"><a href="#Git-debug" class="headerlink" title="Git debug"></a>Git debug</h1><h2 id="Git-443-失败"><a href="#Git-443-失败" class="headerlink" title="Git 443 失败"></a>Git 443 失败</h2><p><strong>报错</strong>：git config –global http.proxy, git config –global https.proxy</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2405656">参考链接1</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42206314/article/details/141951016">参考链接2</a></p>
+</blockquote>
+<hr>
+<p><strong>使用<code>VPN</code>时</strong></p>
+<p>解决方法——调整<code>Git</code>代理设置</p>
+<pre><code class="bash">git config --global http.proxy &lt;IP&gt;
+git config --global https.proxy &lt;IP&gt;
+</code></pre>
+<p><strong>未使用<code>VPN</code>时</strong></p>
+<p>解决方法——取消<code>Git</code>代理设置</p>
+<pre><code class="bash">git config --global --unset http.proxy
+git config --global --unset https.proxy
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2024/09/12/GitHub-%E5%AF%86%E9%92%A5%E9%85%8D%E7%BD%AE/" class="go-post">阅读全文</a>
 </div>
 
 
