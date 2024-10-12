@@ -181,6 +181,132 @@
         
 
 <div class="post">
+    <a href="/2024/10/12/HTML-%E5%85%83%E4%BF%A1%E6%81%AF/">
+        <h2 class="post-title">HTML 元信息</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="什么是元信息"><a href="#什么是元信息" class="headerlink" title="什么是元信息"></a>什么是元信息</h2><blockquote>
+<p>定义</p>
+</blockquote>
+<p><strong>元信息</strong>是关于数据的数据，描述了数据的基本属性和特征，但不包含数据内容本身。</p>
+<p><em>以下为元信息的一些例子——</em></p>
+<ol>
+<li><strong>文件元信息</strong>：在计算机文件中，元信息可能包括创建日期、文件大小、作者、最后修改时间、文件类型等。</li>
+<li><strong>数据库元信息</strong>：在数据库中，元信息可以描述表的结构、字段类型、索引、关系、权限设置等。</li>
+<li><strong>网络元信息</strong>：在互联网上，网页的元信息可能包括关键词、描述、作者、最后更新时间等，这些通常在HTML页面的</li>
+</ol>
+<h2 id="HTML-中的-元素"><a href="#HTML-中的-元素" class="headerlink" title="HTML 中的 &lt;meta&gt;元素"></a>HTML 中的 <code>&lt;meta&gt;</code>元素</h2><p><em>以下为一些使用用例——</em></p>
+<h3 id="指定文档中的字符编码"><a href="#指定文档中的字符编码" class="headerlink" title="指定文档中的字符编码"></a>指定文档中的字符编码</h3><pre><code class="html">&lt;meta charset=&quot;utf-8&quot; /&gt;
+</code></pre>
+<blockquote>
+<p><strong>拓展 1</strong>——其他语言中的字符编码声明</p>
+<ol>
+<li>XML 文档</li>
+</ol>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</code></pre>
+<ol start="2">
+<li>CSS 文件</li>
+</ol>
+<pre><code class="CSS">/* @charset &quot;UTF-8&quot;; */
+</code></pre>
+<ol start="3">
+<li>Python 源代码</li>
+</ol>
+<pre><code class="py"># -*- coding: utf-8 -*-
+</code></pre>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>拓展 2</strong>——主流的编码方案</p>
+<p>在计算机系统中，编码方案用于将人类可读的文本转换为计算机可以存储和处理的格式。以下是一些主流的编码方案：</p>
+<ol>
+<li><p><strong>ASCII (American Standard Code for Information Interchange)</strong>: 这是最早的编码方案之一，它使用7位来表示128个不同的字符，包括英文字母、数字和一些特殊符号。</p>
+</li>
+<li><p><strong>ISO-8859-1 (Latin-1)</strong>: 这是对ASCII的扩展，使用8位来表示256个字符，它包括了西欧语言中使用的字符。</p>
+</li>
+<li><p><strong>UTF-8 (Unicode Transformation Format - 8-bit)</strong>: UTF-8是一种可变长度的Unicode编码，它可以使用1到4个字节来表示一个字符。它向后兼容ASCII，并且在处理多语言内容时非常高效。</p>
+</li>
+<li><p><strong>UTF-16 (Unicode Transformation Format - 16-bit)</strong>: UTF-16使用2或4个字节来表示一个字符。它几乎可以表示所有的Unicode字符，但由于它可能需要4个字节来表示某些字符，所以不如UTF-8那样空间高效。</p>
+</li>
+<li><p><strong>UTF-32 (Unicode Transformation Format - 32-bit)</strong>: UTF-32使用固定的4个字节来表示每个Unicode字符。这种方式简化了字符的处理，但相比UTF-8和UTF-16，它占用的空间更多。</p>
+</li>
+<li><p><strong>GB2312&#x2F;GBK&#x2F;GB18030</strong>: 这些是中国大陆使用的编码方案，用于表示简体中文字符。GB18030是最新的标准，它向后兼容GB2312和GBK，并且包括了所有Unicode字符。</p>
+<p>这些编码方案中，UTF-8因其兼容性和对多语言的支持而成为互联网上最广泛使用的编码方案。随着全球化的发展，UTF-8正逐渐成为文本编码的默认标准。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="添加作者与描述"><a href="#添加作者与描述" class="headerlink" title="添加作者与描述"></a>添加作者与描述</h3><p>许多 <code>&lt;meta&gt;</code> 元素包含了 <code>name</code> 和 <code>content</code> 属性：</p>
+<ul>
+<li><code>name</code> 指定了 meta 元素的类型；说明该元素包含了什么类型的信息。</li>
+<li><code>content</code> 指定了实际的元数据内容。</li>
+</ul>
+<pre><code class="html">&lt;meta name=&quot;author&quot; content=&quot;Mark&quot; /&gt;
+&lt;meta name=&quot;description&quot; content=&quot;The text will be displayed during search.&quot; /&gt;
+</code></pre>
+<p><em>指定作者的用途</em></p>
+<p>​	通常可供一些内容管理系统获取信息，也可以便于联系作者。</p>
+<p><em>指定描述的用途</em></p>
+<p>​	通常可以用于 SEO。</p>
+<blockquote>
+<p><strong>拓展 1</strong>——关于 SEO（Search Engine Optimization）</p>
+<p><em>搜索引擎优化的主要方式——</em></p>
+<ul>
+<li><strong>关键词研究：</strong> 确定目标用户在搜索引擎中搜索的关键词和短语。</li>
+<li><strong>网站优化（On-page SEO）：</strong> 包括优化网站的标题、描述、内容、图片、URL结构等，以提高页面相关性。</li>
+<li><strong>技术SEO：</strong> 确保网站有良好的结构，快速的加载速度，以及移动友好性。</li>
+<li><strong>内容创建：</strong> 制作高质量、有价值、与关键词相关的内容。</li>
+<li><strong>外链建设（Off-page SEO）：</strong> 通过获取其他网站的链接来提高网站的权威性和信任度。</li>
+</ul>
+<p><em>搜索引擎优化的工具——</em></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://search.google.com/search-console/about">Google Search Console - 提升您的网站在 Google 搜索结果中的排名</a></li>
+<li><a target="_blank" rel="noopener" href="https://analytics.google.com/analytics/web/">Google Analytics - 跟踪您的受众群体与流量</a></li>
+<li><a target="_blank" rel="noopener" href="https://ads.google.com/intl/zh_US/home/">Google Ads - 关键词分析师</a></li>
+</ul>
+</blockquote>
+<p>​	</p>
+<h3 id="其他类型的元数据"><a href="#其他类型的元数据" class="headerlink" title="其他类型的元数据"></a>其他类型的元数据</h3><p>举个例子，Twitter 支持的 <code>X Cards</code>就使用的是一套专有的元数据协议，你可以通过此将其导入到自己的页面中。</p>
+<p>具体可查阅 <a target="_blank" rel="noopener" href="https://developer.x.com/en/docs/x-for-websites/cards/overview/summary-card-with-large-image">X Developer Platform - X Cards</a></p>
+<blockquote>
+<p><strong>X Cards - Intro</strong></p>
+<p>With X Cards, you can attach rich photos, videos and media experiences to Tweets, helping to drive traffic to your website. Simply add a few lines of markup to your webpage, and users who Tweet links to your content will have a “Card” added to the Tweet that’s visible to their followers.</p>
+</blockquote>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/HTML/" style="color: #00a596">HTML</a>
+        </span>
+        
+    </div>
+    <a href="/2024/10/12/HTML-%E5%85%83%E4%BF%A1%E6%81%AF/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2024/09/14/CS%20Learning/">
         <h2 class="post-title">CS学习指北</h2>
     </a>
@@ -198,7 +324,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="CS-Learning"><a href="#CS-Learning" class="headerlink" title="CS Learning"></a>CS Learning</h1><blockquote>
+            <h1 id="CS-学习指北"><a href="#CS-学习指北" class="headerlink" title="CS 学习指北"></a>CS 学习指北</h1><blockquote>
 <p>内容正在持续维护中…</p>
 </blockquote>
 <h2 id="一、路径篇"><a href="#一、路径篇" class="headerlink" title="一、路径篇"></a>一、路径篇</h2><h3 id="1-CS自救指南（CS-first-aid）"><a href="#1-CS自救指南（CS-first-aid）" class="headerlink" title="1. CS自救指南（CS first aid）"></a>1. CS自救指南（CS first aid）</h3><blockquote>
@@ -306,8 +432,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="Git-debug"><a href="#Git-debug" class="headerlink" title="Git debug"></a>Git debug</h1><h2 id="Git-443-失败"><a href="#Git-443-失败" class="headerlink" title="Git 443 失败"></a>Git 443 失败</h2><p><strong>报错</strong>：git config –global http.proxy, git config –global https.proxy</p>
-<blockquote>
+            <h1 id="Git-debug"><a href="#Git-debug" class="headerlink" title="Git debug"></a>Git debug</h1><h2 id="Git-443-失败"><a href="#Git-443-失败" class="headerlink" title="Git 443 失败"></a>Git 443 失败</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2405656">参考链接1</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42206314/article/details/141951016">参考链接2</a></p>
 </blockquote>
@@ -478,22 +603,57 @@ INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="Git-debug"><a href="#Git-debug" class="headerlink" title="Git debug"></a>Git debug</h1><h2 id="Git-443-失败"><a href="#Git-443-失败" class="headerlink" title="Git 443 失败"></a>Git 443 失败</h2><p><strong>报错</strong>：git config –global http.proxy, git config –global https.proxy</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2405656">参考链接1</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42206314/article/details/141951016">参考链接2</a></p>
+            <h1 id="GitHub-密钥配置"><a href="#GitHub-密钥配置" class="headerlink" title="GitHub 密钥配置"></a><code>GitHub</code> 密钥配置</h1><h2 id="关于密钥"><a href="#关于密钥" class="headerlink" title="关于密钥"></a>关于密钥</h2><blockquote>
+<p>声明：此部分为 <code>AIGC</code> 内容。</p>
 </blockquote>
+<p><code>SSH</code> 密钥对包括两个密钥：公钥（<code>Public Key</code>）和私钥（<code>Private Key</code>）。它们在功能和使用上有以下主要区别：</p>
+<h3 id="公钥（Public-Key）："><a href="#公钥（Public-Key）：" class="headerlink" title="公钥（Public Key）："></a>公钥（<code>Public Key</code>）：</h3><ul>
+<li><strong>分发</strong>：公钥可以安全地公开分享，不需要保密。</li>
+<li><strong>功能</strong>：公钥主要用于加密数据，这样只有对应的私钥才能解密。在 <code>SSH</code> 中，它还用于验证通过私钥签名的数据。</li>
+<li><strong>大小</strong>：公钥通常比私钥大。</li>
+<li><strong>用途</strong>：在 <code>SSH</code> 连接中，公钥存储在服务器上，用于验证尝试连接的客户端是否拥有匹配的私钥。</li>
+</ul>
+<h3 id="私钥（Private-Key）："><a href="#私钥（Private-Key）：" class="headerlink" title="私钥（Private Key）："></a>私钥（<code>Private Key</code>）：</h3><ul>
+<li><strong>保密</strong>：私钥必须保密，不应该与任何人分享，也不应该存储在公共位置。</li>
+<li><strong>功能</strong>：私钥用于解密由公钥加密的数据，以及在 <code>SSH</code> 连接中证明身份，通过签名操作来验证数据的完整性和来源。</li>
+<li><strong>大小</strong>：私钥通常比公钥小。</li>
+<li><strong>用途</strong>：在 <code>SSH</code> 连接中，私钥存储在客户端计算机上，用于证明客户端的身份，并解密由服务器的公钥加密的数据。</li>
+</ul>
+<h3 id="主要区别总结："><a href="#主要区别总结：" class="headerlink" title="主要区别总结："></a>主要区别总结：</h3><ul>
+<li><strong>分发与保密</strong>：公钥可以公开，私钥必须保密。</li>
+<li><strong>加密与解密</strong>：公钥用于加密数据，私钥用于解密。</li>
+<li><strong>身份验证</strong>：在 <code>SSH</code> 中，公钥用于验证私钥的所有者，私钥用于证明身份。</li>
+<li><strong>签名与验证</strong>：私钥用于对数据进行数字签名，公钥用于验证签名的有效性。</li>
+</ul>
+<p>了解这些区别对于安全地使用 <code>SSH</code> 密钥非常重要。如果私钥泄露，那么任何拥有该私钥的人都可以伪装成密钥的所有者，访问使用该公钥的任何服务。因此，保护私钥的安全是使用 <code>SSH</code> 密钥进行安全通信的关键。</p>
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><blockquote>
+<p>对于<code>Linux</code> 、 <code>Windows</code>系统均适用。</p>
+</blockquote>
+<ul>
+<li>打开终端。</li>
+<li>输入 <code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code> [^1]</li>
+</ul>
+<h2 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h2><ol>
+<li><p>找到生成的公钥文件。默认情况下，它的路径通常是：</p>
+<ul>
+<li><p>Linux&#x2F;macOS: <code>~/.ssh/id_rsa.pub</code></p>
+</li>
+<li><p>Windows: <code>C:\Users\YourUsername\.ssh\id_rsa.pub</code></p>
+</li>
+</ul>
+</li>
+<li><p>打开文件，复制里面的全部内容，在<code>Github</code>里配置。</p>
+</li>
+</ol>
+<h2 id="测试SSH连接"><a href="#测试SSH连接" class="headerlink" title="测试SSH连接"></a>测试<code>SSH</code>连接</h2><p>在终端键入以下代码——</p>
+<pre><code class="sh">ssh -T git@github.com
+</code></pre>
+<p>如果一切正常，你应该会看到一条欢迎信息。</p>
 <hr>
-<p><strong>使用<code>VPN</code>时</strong></p>
-<p>解决方法——调整<code>Git</code>代理设置</p>
-<pre><code class="bash">git config --global http.proxy &lt;IP&gt;
-git config --global https.proxy &lt;IP&gt;
+<p>注：笔者在键入此条代码后报了如下错误，如果你也遇见此类错误可以网络搜寻解决方法。</p>
+<pre><code class="bash">connect to host github.com port 22: Connection timed out
 </code></pre>
-<p><strong>未使用<code>VPN</code>时</strong></p>
-<p>解决方法——取消<code>Git</code>代理设置</p>
-<pre><code class="bash">git config --global --unset http.proxy
-git config --global --unset https.proxy
-</code></pre>
+<p>[^1]:  <code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code> - 在此处，<code>-t rsa</code> 指定了加密算法，<code>-b 4096</code> 指定了密钥的长度，<code>-C</code> 后跟的是邮件地址，作为密钥的标签。</p>
 
             
         </div>

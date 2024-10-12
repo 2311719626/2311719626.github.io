@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML 元信息 | 牢何の小窝</title>
+    <meta name="author" content="牢何" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>牢何の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;牢何の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>HTML 元信息</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/12
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/HTML/" style="color: #ffa2c4">
+                    HTML
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="什么是元信息"><a href="#什么是元信息" class="headerlink" title="什么是元信息"></a>什么是元信息</h2><blockquote>
+<p>定义</p>
+</blockquote>
+<p><strong>元信息</strong>是关于数据的数据，描述了数据的基本属性和特征，但不包含数据内容本身。</p>
+<p><em>以下为元信息的一些例子——</em></p>
+<ol>
+<li><strong>文件元信息</strong>：在计算机文件中，元信息可能包括创建日期、文件大小、作者、最后修改时间、文件类型等。</li>
+<li><strong>数据库元信息</strong>：在数据库中，元信息可以描述表的结构、字段类型、索引、关系、权限设置等。</li>
+<li><strong>网络元信息</strong>：在互联网上，网页的元信息可能包括关键词、描述、作者、最后更新时间等，这些通常在HTML页面的</li>
+</ol>
+<h2 id="HTML-中的-元素"><a href="#HTML-中的-元素" class="headerlink" title="HTML 中的 &lt;meta&gt;元素"></a>HTML 中的 <code>&lt;meta&gt;</code>元素</h2><p><em>以下为一些使用用例——</em></p>
+<h3 id="指定文档中的字符编码"><a href="#指定文档中的字符编码" class="headerlink" title="指定文档中的字符编码"></a>指定文档中的字符编码</h3><pre><code class="html">&lt;meta charset=&quot;utf-8&quot; /&gt;
+</code></pre>
+<blockquote>
+<p><strong>拓展 1</strong>——其他语言中的字符编码声明</p>
+<ol>
+<li>XML 文档</li>
+</ol>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</code></pre>
+<ol start="2">
+<li>CSS 文件</li>
+</ol>
+<pre><code class="CSS">/* @charset &quot;UTF-8&quot;; */
+</code></pre>
+<ol start="3">
+<li>Python 源代码</li>
+</ol>
+<pre><code class="py"># -*- coding: utf-8 -*-
+</code></pre>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>拓展 2</strong>——主流的编码方案</p>
+<p>在计算机系统中，编码方案用于将人类可读的文本转换为计算机可以存储和处理的格式。以下是一些主流的编码方案：</p>
+<ol>
+<li><p><strong>ASCII (American Standard Code for Information Interchange)</strong>: 这是最早的编码方案之一，它使用7位来表示128个不同的字符，包括英文字母、数字和一些特殊符号。</p>
+</li>
+<li><p><strong>ISO-8859-1 (Latin-1)</strong>: 这是对ASCII的扩展，使用8位来表示256个字符，它包括了西欧语言中使用的字符。</p>
+</li>
+<li><p><strong>UTF-8 (Unicode Transformation Format - 8-bit)</strong>: UTF-8是一种可变长度的Unicode编码，它可以使用1到4个字节来表示一个字符。它向后兼容ASCII，并且在处理多语言内容时非常高效。</p>
+</li>
+<li><p><strong>UTF-16 (Unicode Transformation Format - 16-bit)</strong>: UTF-16使用2或4个字节来表示一个字符。它几乎可以表示所有的Unicode字符，但由于它可能需要4个字节来表示某些字符，所以不如UTF-8那样空间高效。</p>
+</li>
+<li><p><strong>UTF-32 (Unicode Transformation Format - 32-bit)</strong>: UTF-32使用固定的4个字节来表示每个Unicode字符。这种方式简化了字符的处理，但相比UTF-8和UTF-16，它占用的空间更多。</p>
+</li>
+<li><p><strong>GB2312&#x2F;GBK&#x2F;GB18030</strong>: 这些是中国大陆使用的编码方案，用于表示简体中文字符。GB18030是最新的标准，它向后兼容GB2312和GBK，并且包括了所有Unicode字符。</p>
+<p>这些编码方案中，UTF-8因其兼容性和对多语言的支持而成为互联网上最广泛使用的编码方案。随着全球化的发展，UTF-8正逐渐成为文本编码的默认标准。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="添加作者与描述"><a href="#添加作者与描述" class="headerlink" title="添加作者与描述"></a>添加作者与描述</h3><p>许多 <code>&lt;meta&gt;</code> 元素包含了 <code>name</code> 和 <code>content</code> 属性：</p>
+<ul>
+<li><code>name</code> 指定了 meta 元素的类型；说明该元素包含了什么类型的信息。</li>
+<li><code>content</code> 指定了实际的元数据内容。</li>
+</ul>
+<pre><code class="html">&lt;meta name=&quot;author&quot; content=&quot;Mark&quot; /&gt;
+&lt;meta name=&quot;description&quot; content=&quot;The text will be displayed during search.&quot; /&gt;
+</code></pre>
+<p><em>指定作者的用途</em></p>
+<p>​	通常可供一些内容管理系统获取信息，也可以便于联系作者。</p>
+<p><em>指定描述的用途</em></p>
+<p>​	通常可以用于 SEO。</p>
+<blockquote>
+<p><strong>拓展 1</strong>——关于 SEO（Search Engine Optimization）</p>
+<p><em>搜索引擎优化的主要方式——</em></p>
+<ul>
+<li><strong>关键词研究：</strong> 确定目标用户在搜索引擎中搜索的关键词和短语。</li>
+<li><strong>网站优化（On-page SEO）：</strong> 包括优化网站的标题、描述、内容、图片、URL结构等，以提高页面相关性。</li>
+<li><strong>技术SEO：</strong> 确保网站有良好的结构，快速的加载速度，以及移动友好性。</li>
+<li><strong>内容创建：</strong> 制作高质量、有价值、与关键词相关的内容。</li>
+<li><strong>外链建设（Off-page SEO）：</strong> 通过获取其他网站的链接来提高网站的权威性和信任度。</li>
+</ul>
+<p><em>搜索引擎优化的工具——</em></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://search.google.com/search-console/about">Google Search Console - 提升您的网站在 Google 搜索结果中的排名</a></li>
+<li><a target="_blank" rel="noopener" href="https://analytics.google.com/analytics/web/">Google Analytics - 跟踪您的受众群体与流量</a></li>
+<li><a target="_blank" rel="noopener" href="https://ads.google.com/intl/zh_US/home/">Google Ads - 关键词分析师</a></li>
+</ul>
+</blockquote>
+<p>​	</p>
+<h3 id="其他类型的元数据"><a href="#其他类型的元数据" class="headerlink" title="其他类型的元数据"></a>其他类型的元数据</h3><p>举个例子，Twitter 支持的 <code>X Cards</code>就使用的是一套专有的元数据协议，你可以通过此将其导入到自己的页面中。</p>
+<p>具体可查阅 <a target="_blank" rel="noopener" href="https://developer.x.com/en/docs/x-for-websites/cards/overview/summary-card-with-large-image">X Developer Platform - X Cards</a></p>
+<blockquote>
+<p><strong>X Cards - Intro</strong></p>
+<p>With X Cards, you can attach rich photos, videos and media experiences to Tweets, helping to drive traffic to your website. Simply add a few lines of markup to your webpage, and users who Tweet links to your content will have a “Card” added to the Tweet that’s visible to their followers.</p>
+</blockquote>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 牢何の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;牢何
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
