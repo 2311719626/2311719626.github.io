@@ -181,6 +181,225 @@
         
 
 <div class="post">
+    <a href="/2024/10/25/Vue-Step-1/">
+        <h2 class="post-title">Vue Step 1</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/25
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <ul>
+<li><p>Vue 指令</p>
+<ul>
+<li><p>定义  Vue根据不同的指令，实现不同的功能。指令是带有 v-前缀的 特殊 标签属性。</p>
+</li>
+<li><p>种类</p>
+<ul>
+<li><p>v-html</p>
+<ul>
+<li><p>作用  设置元素的 inner HTML</p>
+</li>
+<li><p>语法  v-HTML &#x3D; “表达式”</p>
+</li>
+</ul>
+</li>
+<li><p>v-show</p>
+<ul>
+<li><p>作用  控制元素显示隐藏</p>
+</li>
+<li><p>底层原理  通过切换 CSS的display: none来控制显示隐藏</p>
+</li>
+<li><p>语法  v-show &#x3D; “表达式”</p>
+</li>
+<li><p>场景  频繁切换显示隐藏的场景</p>
+</li>
+</ul>
+</li>
+<li><p>v-if</p>
+<ul>
+<li><p>作用  控制元素是否渲染</p>
+</li>
+<li><p>底层原理  通过判断条件控制元素的创建和移除（条件渲染）</p>
+</li>
+<li><p>语法  v-if &#x3D; “表达式”</p>
+</li>
+<li><p>场景  要么显示要么隐藏，不频繁切换的场景</p>
+</li>
+</ul>
+</li>
+<li><p>v-else和v-else-if</p>
+<ul>
+<li>作用  辅助 v-if 进行判断渲染</li>
+</ul>
+</li>
+<li><p>v-on</p>
+<ul>
+<li><p>作用  注册事件（①添加监听  ②提供处理逻辑）</p>
+</li>
+<li><p>语法  ①v-on:事件名 &#x3D; “内联语句” ②v-on:事件名 &#x3D; “methods中的函数名”</p>
+</li>
+<li><p>补充</p>
+<ul>
+<li><p>简写  @事件名&#x3D;”函数”</p>
+</li>
+<li><p>调用传参  向 函数  中传入参数</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v-bind</p>
+<ul>
+<li><p>作用  动态设置 html的标签属性 -&gt; src url title</p>
+</li>
+<li><p>语法  v-bind:属性名&#x3D;”表达式”</p>
+</li>
+<li><p>补充</p>
+<ul>
+<li>简写  :属性名&#x3D;”表达式”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v-for</p>
+<ul>
+<li><p>作用  基于数据循环，多次渲染整个元素</p>
+</li>
+<li><p>范围  ①数组  ②对象  ③数字</p>
+</li>
+<li><p>语法  v-for&#x3D;”(item, index) in array”</p>
+</li>
+<li><p>补充</p>
+<ul>
+<li><p>内容的填充使用  </p>
+</li>
+<li><p>如果不需要 index，可以直接简写指令 item in array</p>
+</li>
+<li><p>key 是给元素添加的唯一标识</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v-model</p>
+<ul>
+<li><p>作用  给表单元素使用，实现双向数据绑定  -&gt;  快速 获取 或 设置 表单元素内容</p>
+<ul>
+<li><p>① 数据变化  -&gt;  视图自动更新</p>
+</li>
+<li><p>② 视图变化  -&gt;  数据自动更新</p>
+</li>
+</ul>
+</li>
+<li><p>语法  v-model&#x3D;”data”</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>训练案例</p>
+<ul>
+<li><p>A 小黑的书架</p>
+<ul>
+<li><p>目标  实现数据的查看与删除</p>
+</li>
+<li><p>解决思路</p>
+<ul>
+<li><p>通过  v-for  在 li中 呈现数据</p>
+</li>
+<li><p>通过  @click在 button下 注册点击事件</p>
+</li>
+<li><p>通过 item.id向调用函数传入参数</p>
+</li>
+<li><p>函数中通过 filter()方法按 id 筛选出剩余的书本对象</p>
+</li>
+<li><p>将获得的新对象通过 &#x3D; 赋值给原数组对象，实现数据的删除</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>B 小黑记事本</p>
+<ul>
+<li><p>目标  实现任务管理（删除、增加、统计）</p>
+</li>
+<li><p>解决思路</p>
+<ul>
+<li><p>① 渲染与删除</p>
+<ul>
+<li><p>通过 v-for 实现列表渲染</p>
+</li>
+<li><p>通过 @click绑定 button绑定删除按钮</p>
+</li>
+<li><p>通过 item.id传参 并 通过 filter() 方法实现删除后的数据更新</p>
+</li>
+</ul>
+</li>
+<li><p>② 添加</p>
+<ul>
+<li><p>通过 v-model 绑定输入框 -&gt; 实时获取表单元素的内容</p>
+</li>
+<li><p>通过 @click 绑定 button 绑定增加按钮</p>
+</li>
+<li><p>在 add() 函数通过 trim() 方法写入验证</p>
+</li>
+<li><p>通过 this.list.unshift({id:+new Date(), name:this.newItem})写入新数据</p>
+</li>
+<li><p>将数据框内容清空</p>
+</li>
+</ul>
+</li>
+<li><p>③ 底部统计与清空</p>
+<ul>
+<li><p>统计通过 list.length 实现</p>
+</li>
+<li><p>情况通过 list&#x3D;[] 实现</p>
+</li>
+<li><p>控制底部展示使用 v-show</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Vue/" style="color: #03a9f4">Vue</a>
+        </span>
+        
+    </div>
+    <a href="/2024/10/25/Vue-Step-1/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2024/10/12/%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E8%BF%9B%E9%98%B6/">
         <h2 class="post-title">文本格式进阶</h2>
     </a>
@@ -393,7 +612,7 @@
         
         <span class="tag">
             
-            <a href="/tags/HTML/" style="color: #00bcd4">HTML</a>
+            <a href="/tags/HTML/" style="color: #ffa2c4">HTML</a>
         </span>
         
     </div>
